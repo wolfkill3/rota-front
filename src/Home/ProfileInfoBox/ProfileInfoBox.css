@@ -1,0 +1,12 @@
+.profile-info-box {
+    display: flex;
+    flex-direction: row;
+    background-color: purple;
+    margin-left: 80px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: center;
+    min-width: 500px;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './HeaderItem.css'
+import './Header.css'
 
 function HeaderItem(props) {
 	return (
