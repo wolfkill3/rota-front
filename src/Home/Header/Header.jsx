@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { removeUserSession } from '../../Utils/Common';
+import { getUser, removeUserSession } from '../../Utils/Common';
 import './Header.css'
 
 function Header(props) {
@@ -14,7 +14,8 @@ function Header(props) {
 
 	return (
 		<header className="header">
-			<input className='logout-button' type='button' value='Выйти' onClick={handleLogout}/>
+			<input className='header-item logout-button' type='button' value='Выйти' onClick={handleLogout}/>
+			<div className='header-item user-login'>{getUser()}</div>
 		</header>
 	);
 }

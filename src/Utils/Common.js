@@ -1,35 +1,48 @@
 export const getBaseUrl = () => {
 	return 'http://localhost:8080';
-}
+};
 
 export const getDefaultConfig = () => {
 	return {
 		headers: {
-			"Content-Type": "application/json",
+			'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': '*',
-		}
+		},
 	};
-}
+};
 
 export const getUser = () => {
-	const userStr = sessionStorage.getItem('user');
-	if (userStr) return JSON.parse(userStr);
-	else return null;
-}
+	const userLogin = sessionStorage.getItem('user');
+	if (userLogin) {
+		return JSON.parse(userLogin);
+	} else {
+		return null;
+	}
+};
 
+export const getUserRulesLevel = () => {
+	const userRulesLevel = sessionStorage.getItem('rulesLevel');
+	if (userRulesLevel) {
+		return JSON.parse(userRulesLevel)
+	} else {
+		return 0;
+	}
+};
 // return the token from the session storage
 export const getToken = () => {
 	return sessionStorage.getItem('token') || null;
-}
+};
 
 // remove the token and user from the session storage
 export const removeUserSession = () => {
 	sessionStorage.removeItem('token');
 	sessionStorage.removeItem('user');
-}
+	sessionStorage.removeItem('rulesLevel');
+};
 
 // set the token and user from the session storage
-export const setUserSession = (token, user) => {
+export const setUserSession = (token, user, rulesLevel) => {
 	sessionStorage.setItem('token', token);
 	sessionStorage.setItem('user', JSON.stringify(user));
-}
+	sessionStorage.setItem('rulesLevel', JSON.stringify(rulesLevel));
+};
