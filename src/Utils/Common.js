@@ -1,5 +1,14 @@
 export const getBaseUrl = () => {
-	return 'http://localhost:4000';
+	return 'http://localhost:8080';
+}
+
+export const getDefaultConfig = () => {
+	return {
+		headers: {
+			"Content-Type": "application/json",
+			'Access-Control-Allow-Origin': '*',
+		}
+	};
 }
 
 export const getUser = () => {
