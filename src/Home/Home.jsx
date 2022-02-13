@@ -5,15 +5,18 @@ import HeaderItems from './Header/HeaderItems';
 import ProfileBox from './ProfileBox/ProfileBox';
 import Sidebar from './Sidebar/Sidebar';
 import SidebarItems from './Sidebar/SidebarItems';
+import './Home.css';
 
 const Home = () => {
 	return (
 		<div className="home">
-			<Header className="head" items={HeaderItems()} ruleLevel={10}/>
+			<Header items={HeaderItems()} ruleLevel={10}/>
 			<div className="chest">
 				<Sidebar items={SidebarItems()} ruleLevel={10}/>
-				<ProfileBox/>
-				<ProfileInfoBox/>
+				<div className="chest-profile-container">
+					<ProfileBox/>
+					<ProfileInfoBox/>
+				</div>
 			</div>
 		</div>
 	);

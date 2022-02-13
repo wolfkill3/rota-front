@@ -1,9 +1,9 @@
 import React from 'react';
-import './ProfileBox.css'
+import './ProfileBox.css';
 
 function ProfileBox() {
 	return (
-		<div className='profile-box'>Профиль</div>
+		<div className="profile-box">Профиль</div>
 	);
 }
 

@@ -23,7 +23,7 @@ export const getUser = () => {
 export const getUserRulesLevel = () => {
 	const userRulesLevel = sessionStorage.getItem('rulesLevel');
 	if (userRulesLevel) {
-		return JSON.parse(userRulesLevel)
+		return JSON.parse(userRulesLevel);
 	} else {
 		return 0;
 	}

@@ -8,7 +8,7 @@ export default function HeaderItems() {
 		{
 			'id': 1,
 			'itemName': 'Пользователи',
-			'rulesLevel': 0
-		}
+			'rulesLevel': 0,
+		},
 	];
 }

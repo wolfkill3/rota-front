@@ -19,9 +19,9 @@ function LoginForm() {
 
 		function success(response) {
 			setLoading(false);
-			setUserSession(response.data.token, response.data.login);
+			setUserSession(response.data.token, response.data.login, response.data.rulesLevel);
 			console.log(response);
-			navigate('/home')
+			navigate('/home');
 		}
 
 		function exception(e) {
