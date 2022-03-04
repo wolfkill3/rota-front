@@ -6,6 +6,11 @@
     padding: 15px 20px;
     align-items: center;
     justify-content: center;
-    min-width: 500px;
-    min-height: 600px;
+}
+
+.p-box {
+    min-width: 200px;
+    min-height: 500px;
+    height: 55%;
+    width: 30%;
 }

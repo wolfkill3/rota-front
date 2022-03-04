@@ -10,6 +10,8 @@ function LoginForm() {
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
+	let loginDefaultValue = 'Логин';
+	let passwordDefaultValue = 'Пароль';
 
 	const handleLogin = () => {
 		const data = { login: login.value, password: password.value };
@@ -29,20 +31,20 @@ function LoginForm() {
 			if (e.response.status === 401) {
 				setError(e.response.data.message);
 			} else {
-				setError('Something went wrong :(');
+				setError('Что-то пошло не так :(');
 			}
 		}
 	};
 
 	return (
 		<div className="login-form">
-			<div>Login</div>
-			<div>Username</div>
-			<input className="auth-field" type="text" {...login} autoComplete="new-password"/>
-			<div>Password</div>
-			<input className="auth-field" type="password" {...password} autoComplete="new-password"/>
-			{error && <><small style={{ color: 'red' }}>{error}</small></>}
-			<input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading}/>
+			<div>Авторизация</div>
+			<input className="auth-field" type="text" {...login} autoComplete="new-password" placeholder={loginDefaultValue}/>
+			<input className="auth-field" type="password" {...password} autoComplete="new-password" placeholder={passwordDefaultValue}/>
+			<input className="login-button button" type="button" value={loading ? 'Вход' : 'Войти'} onClick={handleLogin} disabled={loading}/>
+			<div className="error-place">
+				{error && <><small style={{ color: 'black' }}>{error}</small></>}
+			</div>
 		</div>
 	);
 }

@@ -1,6 +1,8 @@
 .authorize {
     width: 100%;
+    min-height: 722px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f9f9f9;
 }

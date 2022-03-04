@@ -11,6 +11,15 @@ export const getDefaultConfig = () => {
 	};
 };
 
+export const setCurrentPath = (path) => {
+	sessionStorage.setItem('currentPath', path);
+	console.log(path);
+};
+
+export const getCurrentPath = () => {
+	return sessionStorage.getItem('currentPath');
+};
+
 export const getUser = () => {
 	const userLogin = sessionStorage.getItem('user');
 	if (userLogin) {
