@@ -6,7 +6,7 @@
     margin: auto;
     width: 400px;
     height: 250px;
-    background-color: #61dafb;
+    /*background-color: #c9d5e7;*/
     border-radius: 5px;
     /*position: static;*/
 }
@@ -14,22 +14,43 @@
 .auth-field {
     margin: 15px;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    /*background-color: #f9f9f9;*/
     width: 158px;
     /*position: static;*/
 }
 
-.login-button{
-    margin-top: 10px;
-    margin-bottom: 15px;
-    background-color: #f9f9f9;
-    padding-left: 63px;
-    padding-right: 63px;
-    border-radius: 5px;
-    width: 166px;
-    /*position: static;*/
+/*.login-button{*/
+/*    margin-top: 10px;*/
+/*    margin-bottom: 15px;*/
+/*    background-color: #f9f9f9;*/
+/*    padding-left: 63px;*/
+/*    padding-right: 63px;*/
+/*    border-radius: 5px;*/
+/*    width: 166px;*/
+/*    !*position: static;*!*/
+/*}*/
+
+.login-button {
+    height: 40px;
+    width: 40px;
 }
 
 .error-place {
     height: 10px;
+}
+
+/* ENDLESS ROTATE */
+.rotate{
+    animation: rotate 1.5s linear infinite;
+}
+@keyframes rotate{
+    to{ transform: rotate(360deg); }
+}
+
+
+/* SPINNER JUST FOR DEMO */
+.spinner{
+    display:inline-block; width: 50px; height: 50px;
+    border-radius: 50%;
+    box-shadow: inset -2px 0 0 2px #0bf;
 }

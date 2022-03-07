@@ -3,6 +3,8 @@ import './LoginForm.css';
 import { useNavigate } from 'react-router';
 import rest from '../../Utils/RestUtils';
 import { getDefaultConfig, setUserSession } from './../../Utils/Common';
+import loginIcon from '../../resources/icons/login2.png'
+import loadingGif from '../../resources/icons/spiner-1.png'
 
 function LoginForm() {
 	const login = useFormInput('');
@@ -22,7 +24,6 @@ function LoginForm() {
 		function success(response) {
 			setLoading(false);
 			setUserSession(response.data.token, response.data.login, response.data.rulesLevel);
-			console.log(response);
 			navigate('/home');
 		}
 
@@ -35,13 +36,13 @@ function LoginForm() {
 			}
 		}
 	};
-
+ //value={loading ? 'Вход' : 'Войти'}
 	return (
 		<div className="login-form">
 			<div>Авторизация</div>
 			<input className="auth-field" type="text" {...login} autoComplete="new-password" placeholder={loginDefaultValue}/>
 			<input className="auth-field" type="password" {...password} autoComplete="new-password" placeholder={passwordDefaultValue}/>
-			<input className="login-button button" type="button" value={loading ? 'Вход' : 'Войти'} onClick={handleLogin} disabled={loading}/>
+			<input className={loading ? "login-button button icon rotate" : "login-button button icon"} type="image" src={loading ? loadingGif : loginIcon} onClick={handleLogin} disabled={loading} alt="Войти"/>
 			<div className="error-place">
 				{error && <><small style={{ color: 'black' }}>{error}</small></>}
 			</div>

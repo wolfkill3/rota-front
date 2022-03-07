@@ -1,7 +1,7 @@
 .profile-info-box {
     display: flex;
     flex-direction: row;
-    background-color: purple;
+    /*background-color: purple;*/
     margin-left: 80px;
     margin-top: 50px;
     margin-bottom: 50px;

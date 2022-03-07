@@ -14,12 +14,12 @@
 }
 
 .header-top {
-    height: 30px;
+    height: 35px;
     padding: 10px 10px;
     justify-content: right;
     display: flex;
     flex-direction: row;
-    background-color: #2a8dbf;
+    background-color: #9da8c1;
 }
 
 .header-bottom {
@@ -27,16 +27,16 @@
     justify-content: center;
     display: flex;
     flex-direction: row;
-    background-color: #2C97CC;
-    box-shadow: 0 3px rgba(50,125,200,0.5);
+    background-color: #c9d5e7;
+    /*box-shadow: 0 3px rgba(50,125,200,0.5);*/
 }
 
 .header-item {
     top: 50%;
     left: 50%;
     display: flex;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
     text-align: center;
     justify-content: center;
     align-items: center;

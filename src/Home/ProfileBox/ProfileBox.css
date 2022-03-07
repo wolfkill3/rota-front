@@ -1,7 +1,7 @@
 .profile-box {
     display: flex;
     flex-direction: row;
-    background-color: red;
+    /*background-color: red;*/
     margin: 50px;
     padding: 15px 20px;
     align-items: center;
@@ -11,6 +11,88 @@
 .p-box {
     min-width: 200px;
     min-height: 500px;
-    height: 55%;
-    width: 30%;
+    /*height: 55%;*/
+    width: 35%;
+    background-color: #c9d5e7;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(157,168,193, 0.8);
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.p-box-container {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-box-all {
+    display: flex;
+}
+
+.p-box-field{
+    background-color: rgba(231, 231, 231, 0.8);
+    min-width: 185px;
+    min-height: 485px;
+    /*height: 100%;*/
+    width: 100%;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.p-box-photo{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.profile-photo {
+    height: 270px;
+    width: 215px;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(157,168,193, 0.8);
+    margin: 10px;
+}
+
+.p-icon-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    width: 215px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.p-icon {
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.p-info {
+    display: flex;
+    width: 240px;
+    height: 260px;
+    justify-content: center;
+    background-color: #c9d5e7;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 25px;
+    margin-top: 25px;
+    align-items: center;
+}
+
+.p-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.p-info-text {
+    display: flex;
+    justify-content: space-between;
 }
