@@ -5,6 +5,9 @@ import { getDefaultConfig, getToken, getUser } from '../../Utils/Common';
 import rest from '../../Utils/RestUtils';
 import UserProfile from './UserProfile';
 import settings from '../../resources/icons/settings.png';
+import approved from '../../resources/icons/approved.png';
+import notification from '../../resources/icons/notification.png';
+import userProfile from '../../resources/icons/profile.png';
 
 function ProfileBox() {
 	let profile;
@@ -20,7 +23,7 @@ function ProfileBox() {
 			profile = new UserProfile(response);
 			let photo = await profile.getPhoto(getToken(), getUser());
 			ReactDOM.render(<ProfilePhoto data={photo}/>, document.getElementById('profile-photo'));
-			ReactDOM.render(<ProfileName data={profile.getFIO()}/>, document.getElementById('profile-name'));
+			// ReactDOM.render(<ProfileName data={profile.getFIO()}/>, document.getElementById('profile-name'));
 
 			ReactDOM.render(<div className="p-info-text">Имя: {profile.firstName}</div>, document.getElementById('profile-first-name'));
 			ReactDOM.render(<div className="p-info-text">Фамилия: {profile.middleName}</div>, document.getElementById('profile-middle-name'));
@@ -42,7 +45,7 @@ function ProfileBox() {
 			<div className="p-box-container p-box-all">
 				<div className="p-box-field p-box-all">
 					<div className="p-box-photo p-box-all">
-						<div className="profile-photo" id="profile-photo"/>
+						<div id="profile-photo"/>
 						<div className="p-info p-box-all">
 							<div className="p-info-container p-box-all">
 								<div id="profile-first-name" className="p-info-first-name p-info-text">Имя:</div>
@@ -56,10 +59,10 @@ function ProfileBox() {
 						</div>
 					</div>
 					<div className="p-icon-container">
+						<input className="p-icon" type="image" src={userProfile} alt="Настройки"/>
+						<input className="p-icon" type="image" src={approved} alt="Настройки"/>
 						<input className="p-icon" type="image" src={settings} alt="Настройки"/>
-						<input className="p-icon" type="image" src={settings} alt="Настройки"/>
-						<input className="p-icon" type="image" src={settings} alt="Настройки"/>
-						<input className="p-icon" type="image" src={settings} alt="Настройки"/>
+						<input className="p-icon" type="image" src={notification} alt="Настройки"/>
 					</div>
 					<div id="profile-name" className="profile-name"/>
 				</div>
