@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getBaseUrl } from './Common';
 
-function rest(url, data, config, success, error) {
+function restPost(url, data, config, success, error) {
 	axios.post(getBaseUrl() + url, data, config)
 		.then((response) => {
 			return success(response);
@@ -10,4 +10,4 @@ function rest(url, data, config, success, error) {
 	});
 }
 
-export default rest;
+export default restPost;

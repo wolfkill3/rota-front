@@ -8,17 +8,19 @@
     justify-content: center;
 }
 
-.p-box {
-    min-width: 200px;
-    min-height: 500px;
+.p-box-left {
+    display: flex;
+    width: 275px;
+    min-height: 400px;
     /*height: 55%;*/
-    width: 37%;
     background-color: #c9d5e7;
     border-radius: 10px;
     box-shadow: 5px 5px rgba(157,168,193, 0.8);
     justify-content: space-between;
-    align-items: flex-start;
-    max-width: 575px;
+    align-items: center;
+    max-width: 570px;
+    margin-top: 100px;
+    border: 1px black solid;
 }
 
 .p-box-container {
@@ -35,7 +37,7 @@
 .p-box-field{
     background-color: rgba(231, 231, 231, 0.8);
     min-width: 185px;
-    min-height: 485px;
+    min-height: 385px;
     /*height: 100%;*/
     width: 100%;
     border-radius: 10px;
@@ -58,6 +60,14 @@
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 10px;
+    border: 1px black solid;
+}
+
+.profile-photo-pre-render {
+    height: 270px;
+    width: 215px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .p-icon-container {
@@ -66,11 +76,12 @@
     margin-left: 20px;
     width: 205px;
     justify-content: space-around;
-    margin-top: 10px;
+    margin-top: 20px;
     background-color: #c9d5e7;
     border-radius: 10px;
     padding: 5px;
     box-shadow: 5px 5px rgba(157,168,193, 0.8);
+    border: 1px black solid;
 }
 
 .p-icon {
@@ -85,19 +96,24 @@
     width: 270px;
     height: 260px;
     justify-content: center;
-    background-color: #c9d5e7;
+    /*background-color: #c9d5e7;*/
     border-radius: 10px;
     padding: 5px;
     margin-left: 30px;
     margin-top: 20px;
     align-items: center;
-    box-shadow: 5px 5px rgba(157,168,193, 0.8);
+    /*box-shadow: 5px 5px rgba(157,168,193, 0.8);*/
 }
 
 .p-info-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    padding: 10px;
+    /*background-color: rgba(231, 231, 231, 0.8);*/
+    /*box-shadow: -5px -5px rgba(157,168,193, 0.8);*/
+    border-radius: 10px;
+    height: 200px;
 }
 
 .p-info-text {

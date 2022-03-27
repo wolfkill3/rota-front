@@ -18,7 +18,7 @@ class UserProfile {
 	}
 
 	getPhoto(token, login) {
-		return axios.get(getBaseUrl() + `/photo?token=${token}&login=${login}`)
+		return axios.get(getBaseUrl() + `/profile/photo?token=${token}&login=${login}`)
 			.then((response) => {
 				return success(response);
 			}).catch((e) => {

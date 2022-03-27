@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './LoginForm.css';
 import { useNavigate } from 'react-router';
-import rest from '../../Utils/RestUtils';
+import restPost from '../../Utils/RestPost';
 import { getDefaultConfig, setUserSession } from './../../Utils/Common';
 import loginIcon from '../../resources/icons/login2.png'
 import loadingGif from '../../resources/icons/spiner-1.png'
@@ -19,7 +19,7 @@ function LoginForm() {
 		const data = { login: login.value, password: password.value };
 		setError(null);
 		setLoading(true);
-		rest('/login', data, getDefaultConfig(), success, exception);
+		restPost('/login', data, getDefaultConfig(), success, exception);
 
 		function success(response) {
 			setLoading(false);
