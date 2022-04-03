@@ -1,7 +1,9 @@
 import React from 'react';
 import './ProfileInfoBox.css';
+import * as ReactDOM from 'react-dom';
+import { getToken, getUser } from '../../Utils/Common';
+import restPost from '../../Utils/RestPost';
 import Table from './ProfileTable';
-import makeData from './MakeData';
 import styled from 'styled-components';
 
 const Styles = styled.div`
@@ -32,11 +34,10 @@ const Styles = styled.div`
       }
     }
   }
-`
+`;
 
 function ProfileInfoBox() {
-	const data = React.useMemo(() => makeData(10), [])
-
+	const TableRender = ({ data }) => <Table className="table-object" columns={data.columns} data={data.data}/>;
 	const columns = React.useMemo(
 		() => [
 			{
@@ -74,14 +75,41 @@ function ProfileInfoBox() {
 				],
 			},
 		],
-		[]
-	)
+		[],
+	);
+	let data = {};
+	const getProfileTableData = () => {
+		console.log('test2');
+		const request = { login: getUser(), token: getToken() };
+		restPost('/profile/table', request, success, exception);
+
+		async function success(response) {
+			data = {
+				'data': response.data,
+				'columns': columns,
+			};
+			console.log(data);
+			ReactDOM.render(<TableRender data={data}/>, document.getElementById('table-object'));
+		}
+
+		function exception(response) {
+			data = {
+				'data': response.data,
+				'columns': columns,
+			};
+			console.log(data);
+			ReactDOM.render(<TableRender data={data}/>, document.getElementById('table-object'));
+		}
+	};
+
+	console.log('test1');
+	getProfileTableData();
 
 	return (
 		<div className="profile-info-box p-box">
 			<div className="p-box-info-container">
 				<Styles className="table-container">
-					<Table className="table-container" columns={columns} data={data} />
+					<div className="table-object-prerender" id="table-object"/>
 				</Styles>
 			</div>
 		</div>
