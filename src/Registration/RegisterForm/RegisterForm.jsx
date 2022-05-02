@@ -1,31 +1,24 @@
 import React, { useState } from 'react';
-import './LoginForm.css';
+import './RegisterForm.css';
 import { useNavigate } from 'react-router';
+import RegisterRows from './RegisterRows';
 import restPost from '../../Utils/RestPost';
-import { getDefaultConfig, removeUserSession, setUserSession } from './../../Utils/Common';
+import { getDefaultConfig, setUserSession } from './../../Utils/Common';
 import loginIcon from '../../resources/icons/login2.png';
 import loadingGif from '../../resources/icons/spiner-1.png';
-import registration from '../../resources/icons/registration.png';
 
-function LoginForm() {
+function RegisterForm() {
 	const login = useFormInput('');
 	const password = useFormInput('');
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
-	let loginDefaultValue = 'Логин';
-	let passwordDefaultValue = 'Пароль';
-
-	const handleLogout = () => {
-		removeUserSession();
-		navigate('/registration');
-	};
 
 	const handleLogin = () => {
 		const data = { login: login.value, password: password.value };
 		setError(null);
 		setLoading(true);
-		restPost('/auth/login', data, getDefaultConfig(), success, exception);
+		restPost('/login', data, getDefaultConfig(), success, exception);
 
 		function success(response) {
 			setLoading(false);
@@ -42,17 +35,12 @@ function LoginForm() {
 			}
 		}
 	};
-	//value={loading ? 'Вход' : 'Войти'}
+
 	return (
-		<div className="login-form">
-			<div>Авторизация</div>
-			<input className="auth-field" type="text" {...login} autoComplete="new-password" placeholder={loginDefaultValue}/>
-			<input className="auth-field" type="password" {...password} autoComplete="new-password" placeholder={passwordDefaultValue}/>
-			<div className="buttons-container">
-				<input className={loading ? 'login-button button icon rotate' : 'login-button button icon'} type="image"
-				       src={loading ? loadingGif : loginIcon} onClick={handleLogin} disabled={loading} alt="Войти"/>
-				{/*<input className="login-button" type="image" src={registration} onClick={handleLogout} alt="Регистрация"/>*/}
-			</div>
+		<div className="register">
+			<RegisterRows/>
+			<input className={loading ? 'login-button button icon rotate' : 'login-button button icon'} type="image" src={loading ? loadingGif : loginIcon}
+			       onClick={handleLogin} disabled={loading} alt="Войти"/>
 			<div className="error-place">
 				{error && <><small style={{ color: 'black' }}>{error}</small></>}
 			</div>
@@ -72,4 +60,4 @@ const useFormInput = initialValue => {
 	};
 };
 
-export default LoginForm;
+export default RegisterForm;

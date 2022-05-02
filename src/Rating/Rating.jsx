@@ -1,20 +1,18 @@
 import React from 'react';
 import { getUserRulesLevel, setCurrentPath } from '../Utils/Common';
-import ProfileInfoBox from './ProfileInfoBox/ProfileInfoBox';
+import ProfileRatingBox from './ProfileRatingBox/ProfileRatingBox';
 import Header from '../Header/Header';
 import HeaderItems from '../Header/HeaderItems';
-import ProfileBox from './ProfileBox/ProfileBox';
-import './Home.css';
+import './Rating.css';
 
-const Home = () => {
-	setCurrentPath('/home');
+const Rating = () => {
+	setCurrentPath('/rating');
 	return (
-		<div className="home">
+		<div className="rating">
 			<Header items={HeaderItems()} ruleLevel={getUserRulesLevel()}/>
 			<div className="chest">
-				<div className="chest-profile-container">
-					<ProfileBox/>
-					<ProfileInfoBox/>
+				<div className="chest-rating-container">
+					<ProfileRatingBox/>
 				</div>
 			</div>
 		</div>
@@ -22,4 +20,4 @@ const Home = () => {
 	);
 };
 
-export { Home };
+export { Rating };

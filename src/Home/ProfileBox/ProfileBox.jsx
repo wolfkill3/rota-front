@@ -55,10 +55,10 @@ function ProfileBox() {
 						{/*</div>*/}
 					</div>
 					<div className="p-icon-container">
-						<input className="p-icon" type="image" src={userProfile} alt="Настройки"/>
-						<input className="p-icon" type="image" src={approved} alt="Настройки"/>
-						<input className="p-icon" type="image" src={settings} alt="Настройки"/>
-						<input className="p-icon" type="image" src={notification} alt="Настройки"/>
+						<input className="p-icon" type="image" src={userProfile} alt="Профиль" title="Профиль"/>
+						<input className="p-icon" type="image" src={approved} alt="Подтверждение профиля" title="Подтверждение профиля"/>
+						<input className="p-icon" type="image" src={settings} alt="Настройки" title="Настройки"/>
+						<input className="p-icon" type="image" src={notification} alt="Оповещения" title="Оповещения"/>
 					</div>
 					<div id="profile-name" className="profile-name"/>
 				</div>

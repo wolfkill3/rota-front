@@ -1,5 +1,5 @@
 const baseUrl = 'http://localhost:8080';
-const baseAddress = '/api/v1/test'; //"test" - to test api, later to be removed
+const baseAddress = '/api/v1'; //"test" - to test api, later to be removed
 
 export const getBaseUrl = () => {
 	return baseUrl + baseAddress;
